@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    h2{
+        @apply text-2xl
+    }
+    body {
+        background: white;
+        background-image: radial-gradient(black 1px, transparent 0);
+        background-size: 40px 40px;
+        background-position: -19px -19px;
+      }
+    b{
+        /* animation: shine 3s linear infinite; */
+        /* If you want to add beautiful animation uncomment above line */
+        @apply bg-gradient-to-br from-primary to-secondary cursor-default font-bold text-3xl;        
+        background-size: 200% auto;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
+    }
+    span{
+        @apply text-5xl
+    }
+    h1{
+        @apply text-4xl font-bold
+    }
+    h2{
+        @apply text-3xl font-semibold mx-10
+    }
+    h6{
+        @apply text-2xl
+    }
+    p{
+        @apply text-2xl mx-10
+    }
+    form  {
+        @apply min-w-[60vw] mx-auto bg-primary min-h-[70vh] rounded-2xl flex justify-center flex-col gap-4 items-center
+    }
+    input{
+        @apply p-3 rounded-3xl
+    }
+}
