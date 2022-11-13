@@ -7,6 +7,7 @@ export default function App() {
   
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+        <h2>Sign Up</h2>
       <input type="text" placeholder="Name" {...register("Name", {required: true, maxLength: 80})} />
       <input type="text" placeholder="Email" {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} />
       <input type="tel" placeholder="Mobile number" {...register("Mobile number", {required: true, minLength: 6, maxLength: 12})} />

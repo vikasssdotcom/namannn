@@ -3,8 +3,14 @@ import Head from 'next/head'
 import {motion} from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter'
 import {FAQ,LoginForm,SignUpForm } from '../components'
+import { useState } from 'react'
 
 const Home: NextPage = () => {
+  const  [Login,setLogin] = useState(false)
+  const handleClick = () => {
+    setLogin(true)
+  }
+  
   return (
     <>
       <Head>
@@ -26,7 +32,7 @@ const Home: NextPage = () => {
         </div>
       </motion.div>
     <div className='flex justify-center gap-5'>
-        <button className='py-10 rounded-2xl text-white bg-secondary px-20'>
+        <button className='py-10 rounded-2xl text-white bg-secondary px-20' onClick={handleClick}>
            <h1>Login</h1>
         </button>
         
@@ -34,6 +40,7 @@ const Home: NextPage = () => {
           <h1>Sign Up</h1>
         </button>
     </div>
+    
     <FAQ />
     </>
   )
