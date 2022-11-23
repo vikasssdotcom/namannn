@@ -1,17 +1,35 @@
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
-export default function LoginForm() {
+export default function LoginForm({setLogin,Login}) {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
   console.log(errors);
-  
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return ()=> document.body.style.overflow = 'unset';
+ }, []);
+
+  const handleClick = (e) => {
+    e.stopPropagation()
+    setLogin(!Login)
+  }
+  const handleForm = (e) => {
+    e.stopPropagation()
+    setLogin(Login)
+  }
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <div className='fixed top-0 left-0 min-h-screen min-w-full flex items-center bg-white/80' onClick={handleClick} >
+    <form onSubmit={handleSubmit(onSubmit)} className="w-[50vw] " onClick={handleForm}>
       <h2>Login</h2>
       <input type="undefined" placeholder="Wallet Address" {...register} />
-      <input type="undefined" placeholder="Password" {...register} />
+      <input type="password" placeholder="Password" {...register} />
 
-      <input type="submit" />
+      <button className='bg-secondary rounded-xl text-white'>
+        <input  type="submit" />
+      </button>  
     </form>
+    </div>
   );
 }

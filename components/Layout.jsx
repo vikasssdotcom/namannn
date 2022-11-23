@@ -7,7 +7,7 @@ const Layout = ({children}) => {
         <nav className='p-10 flex justify-end gap-x-14 bg-white'>
             <Link href='/'><BS>Home</BS></Link>
             <Link href='/GLogin'><BS>Government Login</BS></Link>
-            <Link href='/GLogin'><BS>Listings</BS></Link>
+            <Link href='/Listings'><BS>Listings</BS></Link>
             <a href='#FAQ'><BS>FAQ</BS></a>
         </nav>
         <main className='min-h-screen w-[80vw] py-10 flex flex-col gap-y-10 bg-white mx-auto'>

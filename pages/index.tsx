@@ -7,8 +7,12 @@ import { useState } from 'react'
 
 const Home: NextPage = () => {
   const  [Login,setLogin] = useState(false)
-  const handleClick = () => {
-    setLogin(true)
+  const  [SignUp,setSignUp] = useState(false)
+  const handleLogin = () => {
+    setLogin(!Login)
+  }
+  const handleSignUp = () => {
+    setSignUp(!SignUp)
   }
   
   return (
@@ -32,15 +36,16 @@ const Home: NextPage = () => {
         </div>
       </motion.div>
     <div className='flex justify-center gap-5'>
-        <button className='py-10 rounded-2xl text-white bg-secondary px-20' onClick={handleClick}>
+        <button className='py-10 rounded-2xl text-white bg-secondary px-20' onClick={handleLogin}>
            <h1>Login</h1>
         </button>
         
-        <button className='py-10 rounded-2xl  border-secondary px-20 border-2 text-secondary'>
+        <button className='py-10 rounded-2xl  border-secondary px-20 border-2 text-secondary' onClick={handleSignUp}>
           <h1>Sign Up</h1>
         </button>
     </div>
-    
+    {Login && <LoginForm Login={Login} setLogin={setLogin}/>}
+    {SignUp && <SignUpForm SignUp={SignUp} setSignUp={setSignUp}/>}
     <FAQ />
     </>
   )

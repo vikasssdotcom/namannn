@@ -9,9 +9,9 @@ export default function GForm() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <h2>Government Login</h2>
       <input type="text" placeholder="Username" {...register("Username", {required: true, maxLength: 80})} />
-      <input type="undefined" placeholder="Password" {...register} />
-      <button>
-        <input type="submit" />
+      <input type="password" placeholder="Password" {...register} />
+      <button className='bg-secondary rounded-xl text-white'>
+        <input  type="submit" />
       </button>  
     </form>
   );
