@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { motion } from 'framer-motion';
 export default function LoginForm({setLogin,Login}) {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
@@ -21,7 +21,7 @@ export default function LoginForm({setLogin,Login}) {
   }
   return (
     <div className='fixed top-0 left-0 min-h-screen min-w-full flex items-center bg-white/80' onClick={handleClick} >
-    <form onSubmit={handleSubmit(onSubmit)} className="w-[50vw] " onClick={handleForm}>
+    <motion.form onSubmit={handleSubmit(onSubmit)} className="w-[50vw] " onClick={handleForm} initial={{opacity:0}} animate={{opacity:1}}>
       <h2>Login</h2>
       <input type="undefined" placeholder="Wallet Address" {...register} />
       <input type="password" placeholder="Password" {...register} />
@@ -29,7 +29,7 @@ export default function LoginForm({setLogin,Login}) {
       <button className='bg-secondary rounded-xl text-white'>
         <input  type="submit" />
       </button>  
-    </form>
+    </motion.form>
     </div>
   );
 }

@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       <motion.div viewport={{ once: true }} initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}} >
         <div className='flex flex-col items-start justify-center p-32 bg-orange-100 border-8 border-x-primary border-y-secondary rounded-full'>
                <h1 className='pb-5 text-7xl font-bold'>Land Registry Application</h1>
-               <div className='h-[1x0vh]'>
+               <div>
                 <Typewriter
                 loop={true}
                 cursorColor="#fff"
